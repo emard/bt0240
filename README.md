@@ -50,4 +50,6 @@ bt0240 prints help
       -v, --verbose           Print extra info
       -l, --list              List Device Settings
 
+Needs 7.5V power supply.
+
 Original Manual: https://rainbow.com.ua/images/files/BT0240_User_Manual.pdf
