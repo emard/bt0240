@@ -52,4 +52,14 @@ bt0240 prints help
 
 Needs 7.5V power supply.
 
+Serial port can connect on-demand to the slave:
+
+      # rfcomm bind 14 00:02:72:11:22:33
+      # ls /dev/rfcomm14
+      /dev/rfcomm14
+
+Use the port (when connected blue LED should turn ON and blink on traffic):
+
+      # screen /dev/rfcomm14 9600
+
 Original Manual: https://rainbow.com.ua/images/files/BT0240_User_Manual.pdf
