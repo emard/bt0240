@@ -1,0 +1,37 @@
+[ ] variable number of retries
+[x] read (10 retries) until two consecutive readings
+[ ] write:
+    1. read first
+    2. is data to be written different?
+    3. if different, write
+    4. verify by reading again, if different goto 3.
+[ ] notify about the bug when changing local name
+[ ] command arg parser and help (use some GNU cmdarg nice lib)
+[ ] dialog character-based window shell to ease usage
+[ ] command line options
+    --role=master | --role=slave
+    --discoverable=yes | --discoverable=no
+    --peer=AA:BB:CC:DD:EE:FF | --peer=any
+    --pin=1234 | --pin=none
+    --name="Serial Adapter"
+    --uart=9600,n,1
+    --list     
+
+
+    ** read **
+       ----
+       send read command, expect answer with select for 5 seconds,
+       if silent, send read again. If 3 reads fail, bail out.
+
+       if read succeeds, repeat again to get the same result
+       if 5 reads don't get 2 same in succession, bail out
+
+    ** write **
+       -----
+       send write command, expect confirmation result with select
+       for 5 seconds, if silent sand again, 3 silent reads bail out
+
+       upon successful write, call read procedure to verify written.
+       try to write and verify 3 times to get correct reading otherwise
+       bail out.
+

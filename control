@@ -1,0 +1,9 @@
+Package: bt0240
+Version: VERSION
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libbluetooth3, libc6 (>= 2.3.5-13), liblockdev1 (>= 1.0.2-1)
+Maintainer: Davor Emard <davoremard@gmail.com>
+Description: Configurator for BT-0240 Bluetooth RS232 Adapter
+ Configures BT-0240 device in CFG mode

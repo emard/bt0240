@@ -1,0 +1,22 @@
+# file cmdline.ggo
+
+# Name of your program
+package "bt0240"        # don't use package if you're using automake
+# Version of your program
+version "0.5.1"         # don't use version if you're using automake
+
+purpose "Configurator for BT-0240 Bluetooth RS232C Adapter"
+
+#       long         short    description              type   default              required
+option  "device"     d "Serial Device or MAC of BT-0240"       string default="/dev/ttyS0" no
+option  "bps"        b "Serial Speed in bps [9600-1382400]"    int    default="115200"     no
+option  "parity"     - "Serial Parity [none|even|odd]"         string default="none"       no
+option  "stopbits"   - "Serial Number of Stop Bits"            int    default="1"          no
+option  "role"       - "Bluetooth Role [master|slave]"         string default="slave"      no
+option  "discoverable" - "Bluetooth Device Discoverable (0|1)" int default="1"             no
+option  "peer"       - "Bluetooth Peer MAC [AA:BB:CC:DD:EE:FF|any]" string default="any"   no
+option  "pin"        p "Bluetooth Security PIN [4-12 chars|off]" string default="1234"     no
+option  "name"       - "Bluetooth Device Name [1-31 chars]"    string default="Serial Adapter" no
+option  "reset"      - "Configure Device to Default Settings"  flag off
+option  "verbose"    v "Print extra info"                                                  no
+option  "list"       l "List Device Settings"                                              no
