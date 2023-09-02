@@ -1,7 +1,13 @@
 # BT-0240 Configurator
 
-This source was working on linux 2007-2011
-and with removing obsolete liblockdev it still works.
+Configurator for Bluetooth RS232 Adapter.
+Device Original Manual with windows usage:
+https://rainbow.com.ua/images/files/BT0240_User_Manual.pdf
+
+Linux Usage:
+
+Connect 7.5V power supply and turn the switch ON.
+Green LED &#x1f7e9; should light up.
 
 Find out MAC address
 
@@ -9,8 +15,8 @@ Find out MAC address
     Scanning ...
            00:02:72:11:22:33      Adapter1
 
-Push "CFG" button near power plug socket, 
-yellow LED should light up indicating
+Push "CFG" button near power plug socket.
+Yellow LED &#x1f7e7; should light up, indicating
 configuration is allowed now.
 Run configurator
 
@@ -50,16 +56,13 @@ bt0240 prints help
       -v, --verbose           Print extra info
       -l, --list              List Device Settings
 
-Needs 7.5V power supply.
-
 Serial port can connect on-demand to the slave:
 
       # rfcomm bind 14 00:02:72:11:22:33
       # ls /dev/rfcomm14
       /dev/rfcomm14
 
-Use the port (when connected blue LED should turn ON and blink on traffic):
+Use the port. When connected, Blue LED &#x1F7E6; should turn ON and blink on traffic.
 
       # screen /dev/rfcomm14 9600
 
-Original Manual: https://rainbow.com.ua/images/files/BT0240_User_Manual.pdf
